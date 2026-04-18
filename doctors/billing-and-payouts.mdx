@@ -1,0 +1,191 @@
+---
+title: "Billing & Payouts"
+description: "Understand your earnings, the 2% platform fee, Stripe Connect payouts, and payout schedules on ExpertMD."
+icon: "credit-card"
+---
+
+# Billing & Payouts
+
+ExpertMD handles all payment processing through Stripe. When an attorney pays your invoice, the funds flow through Stripe and are deposited into your connected bank account after the platform fee is deducted. This guide explains how earnings, fees, and payouts work.
+
+## How payments flow
+
+When an attorney pays one of your invoices, the payment follows this path:
+
+<Steps>
+  <Step title="Attorney pays the invoice">
+    The attorney clicks the payment link in their invoice email or pays from within ExpertMD. They can pay using a credit card, debit card, or ACH bank transfer.
+  </Step>
+  <Step title="Stripe processes the payment">
+    Stripe securely processes the payment and holds the funds temporarily.
+  </Step>
+  <Step title="Platform fee is deducted">
+    ExpertMD deducts a **2% platform fee** from the invoice total. This is the only fee ExpertMD charges.
+  </Step>
+  <Step title="Funds are deposited to your account">
+    The remaining balance (98% of the invoice total) is transferred to your Stripe Connect account and subsequently to your linked bank account according to your payout schedule.
+  </Step>
+</Steps>
+
+## The 2% platform fee
+
+ExpertMD charges a flat **2% platform fee** on each invoice payment. This fee covers:
+
+- Platform infrastructure and hosting
+- Secure payment processing
+- End-to-end encryption services
+- Customer support
+- Ongoing platform development
+
+### Fee calculation example
+
+| Invoice Total | Platform Fee (2%) | Your Payout |
+|--------------|-------------------|-------------|
+| $1,000.00 | $20.00 | $980.00 |
+| $5,000.00 | $100.00 | $4,900.00 |
+| $10,000.00 | $200.00 | $9,800.00 |
+| $25,000.00 | $500.00 | $24,500.00 |
+
+<Info>
+  The 2% platform fee is the only fee ExpertMD charges. There are no monthly subscription fees, setup fees, or hidden charges. Stripe's own processing fees (approximately 2.9% + $0.30 for cards, or 0.8% for ACH, capped at $5) are charged separately by Stripe on top of the platform fee.
+</Info>
+
+### Fee transparency
+
+On every invoice detail page, you can see a breakdown of:
+
+- **Gross amount** -- The total invoice amount paid by the attorney
+- **Platform fee** -- The 2% ExpertMD fee
+- **Stripe processing fee** -- The Stripe payment processing fee
+- **Net payout** -- The amount deposited to your bank account
+
+## Viewing your earnings
+
+### Billing page
+
+Navigate to **Billing** in the left sidebar to see your complete financial overview:
+
+- **Total Earnings** -- Cumulative net earnings across all paid invoices
+- **Pending Balance** -- Funds that have been paid by attorneys but not yet deposited to your bank
+- **Available Balance** -- Funds in your Stripe account ready for payout
+- **Payout History** -- A log of all payouts to your bank account
+
+### Earnings breakdown
+
+The Billing page includes a table of all paid invoices showing:
+
+| Column | Description |
+|--------|-------------|
+| Invoice # | The invoice number |
+| Case | The case the invoice belongs to |
+| Attorney | The attorney who paid |
+| Gross Amount | The total invoice amount |
+| Platform Fee | The 2% ExpertMD fee |
+| Net Payout | Your earnings after fees |
+| Payment Date | When the payment was received |
+| Payout Status | Pending, In Transit, or Deposited |
+
+## Payout schedule
+
+Payouts from Stripe to your bank account follow Stripe's standard payout schedule:
+
+- **Standard payout schedule** -- Funds are paid out automatically on a rolling basis
+- **Initial payout delay** -- New Stripe Connect accounts may have a 7-14 day initial delay while Stripe verifies your identity
+- **Ongoing payouts** -- After the initial period, payouts typically arrive in 2 business days
+
+<Info>
+  Payout timing depends on your bank and Stripe's schedule. You can view the exact payout schedule and estimated arrival dates in your Stripe dashboard.
+</Info>
+
+### Accessing your Stripe dashboard
+
+From the Billing page, click **Go to Stripe Dashboard** to open your Stripe Connect dashboard in a new tab. From there you can:
+
+- View detailed transaction history
+- Update your bank account information
+- Change your payout schedule
+- Download tax documents (1099 forms)
+- View Stripe's own fee breakdowns
+
+## Payment methods accepted
+
+ExpertMD supports the following payment methods for attorneys paying invoices:
+
+| Method | Processing Time | Stripe Fee |
+|--------|----------------|------------|
+| Credit Card | Instant | ~2.9% + $0.30 |
+| Debit Card | Instant | ~2.9% + $0.30 |
+| ACH Bank Transfer | 3-5 business days | ~0.8% (capped at $5) |
+
+<Tip>
+  For large invoices, ACH bank transfer is significantly cheaper for the attorney. An invoice for $10,000 costs approximately $80 via ACH versus $320 via credit card. You might suggest ACH to your attorneys for larger invoices.
+</Tip>
+
+## Tax considerations
+
+ExpertMD does not withhold taxes from your payouts. You are responsible for reporting and paying taxes on your expert witness income. Stripe provides the following tax documents:
+
+- **1099-K** -- Issued annually if your gross payments exceed the IRS threshold
+- **Available in Stripe Dashboard** -- Download from Settings > Documents in your Stripe dashboard
+
+<Warning>
+  Consult with your tax advisor about reporting expert witness income. ExpertMD does not provide tax advice. Keep detailed records of all invoices and payouts for your tax filings.
+</Warning>
+
+## Handling disputes and refunds
+
+### Attorney disputes a charge
+
+If an attorney disputes a charge with their bank (chargeback):
+
+1. Stripe notifies you via email and in your Stripe dashboard
+2. The disputed amount is temporarily held
+3. You can provide evidence to Stripe to contest the dispute
+4. Stripe adjudicates the dispute based on the evidence
+
+### Issuing a refund
+
+If you need to refund an attorney:
+
+1. Contact ExpertMD support at support@expertmd.io
+2. Provide the invoice number and reason for the refund
+3. The refund is processed through Stripe and returned to the attorney's original payment method
+
+<Info>
+  Partial refunds are also supported. If you need to refund only a portion of an invoice (e.g., for a service that was not completed), specify the amount you want to refund.
+</Info>
+
+## Troubleshooting
+
+### My payout is delayed
+
+- **New account:** Expect a 7-14 day initial delay while Stripe verifies your identity. Ensure all verification steps are complete in your Stripe dashboard.
+- **Verification needed:** Check your Stripe dashboard for any pending identity or bank verification requests.
+- **Bank processing:** Payouts can take 1-2 business days after Stripe initiates the transfer.
+
+### I am not seeing payments from a paid invoice
+
+- Verify the invoice status shows as **Paid** in ExpertMD
+- Check your Stripe dashboard for the corresponding payment
+- Payments may take a few minutes to appear after the attorney completes payment
+- If the payment does not appear after 24 hours, contact support
+
+### My Stripe account is restricted
+
+Stripe may restrict your account if:
+- Identity verification is incomplete
+- Suspicious activity is detected
+- Required documentation has not been submitted
+
+Check your Stripe dashboard for specific action items and complete any outstanding requirements.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Stripe Connect Setup" icon="stripe" href="/doctors/stripe-connect">
+    Set up or update your Stripe Connect account
+  </Card>
+  <Card title="Invoicing" icon="file-invoice" href="/doctors/invoicing">
+    Create and manage invoices
+  </Card>
+</CardGroup>

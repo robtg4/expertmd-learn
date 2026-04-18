@@ -1,0 +1,80 @@
+---
+title: "Encryption Overview"
+description: "A technical overview of how ExpertMD implements end-to-end encryption with key derivation, keypairs, and per-case keys."
+icon: "lock"
+---
+
+# How End-to-End Encryption Works
+
+ExpertMD uses a multi-layer encryption architecture to protect sensitive case data. This guide provides a detailed technical overview of how encryption works on the platform.
+
+## Architecture overview
+
+The encryption system has four main components:
+
+1. **Passphrase** -- A user-created secret that never leaves their device
+2. **Key derivation** -- PBKDF2 transforms the passphrase into an encryption key
+3. **Asymmetric keypair** -- A public/private key pair for each user
+4. **Per-case symmetric keys** -- Unique encryption keys for each case
+
+## How it all connects
+
+<Steps>
+  <Step title="Passphrase to derived key">
+    When you enter your passphrase, PBKDF2 (Password-Based Key Derivation Function 2) is used with a unique salt and a high iteration count to derive a strong encryption key. This slows down brute-force attacks.
+  </Step>
+  <Step title="Derived key protects your private key">
+    Your asymmetric keypair is generated once during encryption setup. The public key is stored on the server in plaintext (so others can encrypt data for you). The private key is encrypted with your passphrase-derived key and stored on the server in encrypted form.
+  </Step>
+  <Step title="Per-case keys encrypt data">
+    Each case gets a unique symmetric key (AES-256). All sensitive data in the case is encrypted with this key. The per-case key is then encrypted with each authorized user's public key and stored alongside the case.
+  </Step>
+  <Step title="Decryption on your device">
+    When you access a case, your browser:
+    1. Decrypts your private key using your passphrase-derived key
+    2. Uses your private key to decrypt the per-case key
+    3. Uses the per-case key to decrypt the case data
+    4. Displays the decrypted data in your browser
+
+    All decryption happens locally in your browser. Decrypted data is never sent to the server.
+  </Step>
+</Steps>
+
+## Key sharing
+
+When multiple users need access to the same case (e.g., a doctor and an attorney), the per-case key is encrypted separately with each authorized user's public key. This means:
+
+- Each user can independently decrypt the case data with their own passphrase
+- Adding a new user to a case requires encrypting the per-case key with their public key
+- Removing a user requires re-keying the case (generating a new per-case key and re-encrypting all data)
+
+## What is encrypted vs. plaintext
+
+| Data Type | Encrypted | Reason |
+|-----------|-----------|--------|
+| Case notes | Yes | Contains sensitive medical/legal information |
+| Uploaded documents | Yes | May contain medical records, privileged communications |
+| Case metadata (name, status) | No | Needs to be searchable and displayed in lists |
+| Invoice amounts | No | Needs to be processed by Stripe |
+| Profile information | No | Needs to be visible to other users |
+
+## Security guarantees
+
+- **ExpertMD staff cannot read your encrypted data** -- The server only stores encrypted blobs
+- **A database breach does not expose case content** -- Encrypted data is meaningless without the per-case keys, which are themselves encrypted
+- **Each user's passphrase is independent** -- Compromising one user's passphrase does not compromise another user's data
+
+<Warning>
+  The security of the entire system depends on the strength and secrecy of your passphrase. Choose a strong passphrase and never share it with anyone, including ExpertMD staff.
+</Warning>
+
+## Learn more
+
+<CardGroup cols={2}>
+  <Card title="Encryption Setup" icon="lock" href="/getting-started/encryption-setup">
+    Set up your passphrase and encryption keys
+  </Card>
+  <Card title="Passphrase Management" icon="key" href="/security/passphrase-management">
+    Best practices for managing your passphrase
+  </Card>
+</CardGroup>

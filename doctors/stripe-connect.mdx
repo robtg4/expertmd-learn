@@ -1,0 +1,97 @@
+---
+title: "Stripe Connect Setup"
+description: "Set up your Stripe Connect account to accept payments and receive payouts from attorneys."
+icon: "stripe"
+---
+
+# Stripe Connect Setup
+
+ExpertMD uses [Stripe Connect](https://stripe.com/connect) to handle payment processing and payouts. Before you can create invoices and receive payments, you must set up a Stripe Connect account linked to your ExpertMD profile.
+
+## Prerequisites
+
+Before setting up Stripe Connect, make sure you have:
+
+- A completed ExpertMD profile (all required fields filled in)
+- A bank account or debit card for receiving payouts
+- Government-issued photo ID for identity verification
+- Your Social Security number or EIN (for tax reporting)
+
+## Setting up Stripe Connect
+
+<Steps>
+  <Step title="Navigate to Billing">
+    Click **Billing** in the left sidebar to open the billing page.
+  </Step>
+  <Step title="Click Connect with Stripe">
+    Click the **Connect with Stripe** button. You will be redirected to Stripe's onboarding flow.
+  </Step>
+  <Step title="Complete Stripe onboarding">
+    Stripe will ask for:
+    - **Business type** -- Select Individual or Sole Proprietor (unless you operate as a business entity)
+    - **Personal information** -- Legal name, date of birth, last 4 of SSN
+    - **Address** -- Your business or personal address
+    - **Bank account** -- Routing and account number for receiving payouts
+    - **Identity verification** -- Upload a photo of your government-issued ID
+  </Step>
+  <Step title="Return to ExpertMD">
+    After completing Stripe's onboarding, you are redirected back to ExpertMD. Your Stripe Connect account is now linked and you can begin creating invoices.
+  </Step>
+</Steps>
+
+<Info>
+  The Stripe onboarding process typically takes 5-10 minutes. Once completed, your account may take 1-2 business days for full verification. You can create invoices immediately, but payouts will not begin until verification is complete.
+</Info>
+
+## Verifying your Stripe account
+
+After initial setup, Stripe may request additional verification. Check your Stripe dashboard for any pending requirements:
+
+- Additional identity documents
+- Address verification
+- Bank account verification (Stripe may make small test deposits)
+
+<Warning>
+  If your Stripe account verification is not completed within 30 days, your ability to accept payments may be restricted. Complete all verification steps promptly.
+</Warning>
+
+## Updating your Stripe account
+
+To update your bank account, address, or other Stripe information:
+
+1. Go to **Billing** in ExpertMD
+2. Click **Go to Stripe Dashboard**
+3. Update your information directly in Stripe's dashboard
+
+Changes to your Stripe account (such as updating your bank account) take effect immediately for future payouts.
+
+## Troubleshooting
+
+### I cannot complete Stripe onboarding
+
+- Ensure your browser allows pop-ups from stripe.com
+- Try using Chrome or Firefox in a non-incognito window
+- Clear your browser cache and try again
+
+### My Stripe account is restricted
+
+- Log in to your Stripe dashboard to see specific action items
+- Complete any pending identity or document verification
+- Contact Stripe support if the restriction seems incorrect
+
+### Payouts are not arriving
+
+- Verify your bank account details are correct in Stripe
+- Check if there are pending verification requirements
+- New accounts have a 7-14 day initial payout delay
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Invoicing" icon="file-invoice" href="/doctors/invoicing">
+    Start creating invoices for your cases
+  </Card>
+  <Card title="Billing & Payouts" icon="credit-card" href="/doctors/billing-and-payouts">
+    Understand fees and payout schedules
+  </Card>
+</CardGroup>

@@ -1,0 +1,60 @@
+---
+title: "Security"
+description: "Learn how ExpertMD protects your sensitive legal and medical data with end-to-end encryption and secure infrastructure."
+icon: "shield"
+---
+
+# Security at ExpertMD
+
+ExpertMD is built with security as a foundational principle. Expert witness cases involve highly sensitive medical and legal information, and we take every measure to protect it. This section covers our encryption architecture, passphrase management, and security best practices.
+
+## Security overview
+
+<CardGroup cols={2}>
+  <Card title="End-to-End Encryption" icon="lock" href="/security/encryption-overview">
+    How we encrypt sensitive case data so that only authorized parties can access it
+  </Card>
+  <Card title="Passphrase Management" icon="key" href="/security/passphrase-management">
+    Best practices for creating, storing, and managing your encryption passphrase
+  </Card>
+</CardGroup>
+
+## Infrastructure security
+
+ExpertMD runs on Amazon Web Services (AWS) with the following security measures:
+
+- **AWS ECS** -- Containerized application deployment with isolated execution environments
+- **AWS RDS** -- PostgreSQL database with encryption at rest and automated backups
+- **AWS S3** -- Document storage with server-side encryption
+- **HTTPS everywhere** -- All traffic is encrypted in transit using TLS 1.2+
+- **Clerk authentication** -- Industry-standard authentication with MFA support
+
+## Compliance
+
+ExpertMD is designed with the following compliance considerations:
+
+- **HIPAA considerations** -- Sensitive medical data is encrypted end-to-end
+- **Attorney-client privilege** -- Case data is encrypted and accessible only to authorized parties
+- **Data minimization** -- We collect and store only the data necessary for platform operation
+
+## Reporting security issues
+
+If you discover a security vulnerability, please report it responsibly:
+
+- Email: security@expertmd.io
+- Do not disclose the vulnerability publicly until we have addressed it
+- We appreciate and acknowledge responsible security researchers
+
+## Key principles
+
+<Steps>
+  <Step title="Zero-knowledge encryption">
+    ExpertMD cannot read your encrypted case data. Your passphrase never leaves your device, and we cannot recover it if lost.
+  </Step>
+  <Step title="Defense in depth">
+    Multiple layers of security protect your data: TLS in transit, encryption at rest, end-to-end encryption for sensitive data, and role-based access controls.
+  </Step>
+  <Step title="Least privilege">
+    Team members and collaborators can only access the specific cases they are authorized for. No user has access to data beyond what they need.
+  </Step>
+</Steps>

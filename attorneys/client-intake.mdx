@@ -1,0 +1,189 @@
+---
+title: "Client Intake"
+description: "Set up your client intake form with a custom URL slug, share it with clients, and manage incoming submissions."
+icon: "file-text"
+---
+
+# Client Intake
+
+ExpertMD provides attorneys with a client intake form system. You can create a branded intake form with a custom URL, share it with your clients, and receive submissions directly in your ExpertMD dashboard. This streamlines the process of gathering case information from clients before engaging a medical expert.
+
+## Overview
+
+The client intake system allows your clients (plaintiffs, defendants, or other parties) to submit case information to you through a dedicated form. This information helps you prepare intake requests for medical experts on the platform.
+
+<Info>
+  Client intake is separate from the intake requests you submit to doctors. Think of it as: your clients submit information to you through your client intake form, and then you submit intake requests to doctors based on that information.
+</Info>
+
+## Setting up your intake form
+
+### Configuring your URL slug
+
+Every attorney on ExpertMD gets a unique client intake URL. You can customize the slug to make it professional and easy to remember.
+
+<Steps>
+  <Step title="Navigate to Settings">
+    Click **Settings** in the left sidebar, then select the **Intake** tab.
+  </Step>
+  <Step title="Set your URL slug">
+    Enter your desired URL slug. Your intake form will be accessible at:
+
+    ```
+    https://expertmd.io/client-intake/your-slug-here
+    ```
+
+    Your slug must:
+    - Be unique across all ExpertMD users
+    - Contain only lowercase letters, numbers, and hyphens
+    - Be between 3 and 50 characters
+  </Step>
+  <Step title="Save your settings">
+    Click **Save** to activate your intake URL. You can change your slug at any time, but the old URL will stop working immediately.
+  </Step>
+</Steps>
+
+<Tip>
+  Choose a slug that is professional and easy to communicate verbally. Good examples: `smith-law`, `johnson-associates`, `miami-injury-law`. Avoid overly long or complex slugs that are hard to type.
+</Tip>
+
+### Intake form fields
+
+Your client intake form collects the following information from clients:
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| Full Name | Yes | Client's legal name |
+| Email | Yes | Client's email address for communication |
+| Phone | Yes | Client's phone number |
+| Case Type | Yes | Type of case (personal injury, medical malpractice, etc.) |
+| Description | Yes | A detailed description of the case and injuries/issues |
+| Date of Incident | No | When the incident occurred |
+| Medical Provider | No | Treating physicians or hospitals involved |
+| Additional Notes | No | Any other relevant information |
+| File Attachments | No | Supporting documents (medical records, police reports, etc.) |
+
+<Info>
+  All submitted information is stored securely. Sensitive data within the submission is protected by ExpertMD's end-to-end encryption once processed into a case.
+</Info>
+
+## Sharing your intake form
+
+Once your intake URL is configured, share it with clients through multiple channels:
+
+### Direct link sharing
+
+Copy your intake URL from **Settings > Intake** and share it via:
+
+- **Email** -- Include the link in emails to new or existing clients
+- **Text message** -- Send the link via SMS for quick mobile access
+- **In-person** -- Share the URL during client consultations
+
+### Website integration
+
+Add your intake link to your law firm's website:
+
+- Add a "Submit Your Case" button that links to your ExpertMD intake URL
+- Include it on your Contact Us page
+- Add it to your website's navigation menu
+
+### Email signature
+
+Include your intake URL in your email signature so every email you send gives clients easy access to submit their case information.
+
+<Tip>
+  When sharing your intake URL with clients, briefly explain what it is: "Please use this secure form to submit your case details. The information is encrypted and will help us find the right medical expert for your case."
+</Tip>
+
+## What clients see
+
+When a client visits your intake URL, they see a clean, professional form with:
+
+- Your name and firm name at the top
+- Clear field labels and descriptions
+- File upload capability for supporting documents
+- A submit button that confirms their submission
+
+The form is mobile-friendly, so clients can complete it from their phone or tablet.
+
+## Receiving submissions
+
+When a client submits the intake form:
+
+1. You receive a **notification** in your ExpertMD dashboard
+2. You receive an **email alert** (if email notifications are enabled)
+3. The submission appears in your **Intake Requests** section
+
+### Reviewing submissions
+
+Navigate to your intake requests page to see all client submissions. Each submission shows:
+
+- Client name and contact information
+- Case type and description
+- Date submitted
+- Attached documents
+- Status (New, Reviewed, Converted to Case)
+
+### Converting to a case
+
+After reviewing a client submission, you can use the information to:
+
+1. Search for an appropriate medical expert on ExpertMD
+2. Submit an intake request to the doctor using the client's case details
+3. Once the doctor accepts, a case is created that you can manage through the platform
+
+## Managing your intake form
+
+### Enabling and disabling
+
+You can temporarily disable your client intake form from **Settings > Intake**:
+
+- **Active** -- Your form is accepting new submissions
+- **Paused** -- Your form shows a "Not accepting submissions" message
+
+This is useful if you are at capacity and do not want to receive new client inquiries.
+
+### Updating your slug
+
+You can change your URL slug at any time from **Settings > Intake**. Keep in mind:
+
+- The old URL will stop working immediately
+- Update any links on your website, email signature, or other materials
+- Existing submissions are not affected
+
+<Warning>
+  If you change your slug, anyone using the old URL will see a 404 page. Make sure to update all references to your intake URL when you change it.
+</Warning>
+
+## Troubleshooting
+
+### My intake form is not accessible
+
+- Verify your URL slug is saved correctly in **Settings > Intake**
+- Check that your form status is set to Active
+- Try accessing the URL in an incognito browser window
+- Ensure you are using the correct URL format: `https://expertmd.io/client-intake/your-slug`
+
+### Client cannot submit the form
+
+- Ensure all required fields are filled in
+- File uploads must be under the maximum size limit (typically 10MB per file)
+- The client's browser must support modern web standards
+- Disable browser extensions that may block form submissions
+
+### I am not receiving notifications for submissions
+
+- Check **Settings > Notifications** to ensure intake notifications are enabled
+- Verify your email address is correct in your profile
+- Check your email spam folder
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Intake Requests" icon="inbox" href="/attorneys/intake-requests">
+    Manage your submitted intake requests to doctors
+  </Card>
+  <Card title="Case Management" icon="folder-open" href="/attorneys/case-management">
+    Learn how to manage active cases
+  </Card>
+</CardGroup>

@@ -1,0 +1,160 @@
+---
+title: "Account Setup"
+description: "Create your ExpertMD account, choose your role, and complete the guided onboarding process."
+icon: "user-plus"
+---
+
+# Account Setup
+
+Getting started with ExpertMD takes just a few minutes. This guide walks you through account creation, role selection, and the three-step onboarding process that ensures your account is fully configured before you start working.
+
+## Creating your account
+
+ExpertMD uses [Clerk](https://clerk.com) for authentication, giving you a secure and flexible sign-in experience.
+
+<Steps>
+  <Step title="Visit the ExpertMD website">
+    Navigate to [expertmd.io](https://expertmd.io) and click the **Sign Up** button in the top navigation bar. You can also click **Get Started** from any of the landing page sections.
+  </Step>
+  <Step title="Choose your sign-up method">
+    You can create an account using:
+    - **Email and password** -- Enter your email address and create a strong password
+    - **Google** -- Sign in with your Google account for one-click setup
+    - **Apple** -- Use your Apple ID if you prefer
+
+    <Info>
+      Whichever method you choose, you will need to verify your email address before proceeding. Check your inbox for a verification code.
+    </Info>
+  </Step>
+  <Step title="Verify your email">
+    Enter the 6-digit verification code sent to your email address. This confirms ownership of your email and activates your account. The code expires after 10 minutes, so enter it promptly.
+  </Step>
+</Steps>
+
+## Role selection
+
+After your account is created, you will be asked to select your role on the platform. This determines your dashboard layout, available features, and navigation.
+
+<CardGroup cols={2}>
+  <Card title="Doctor / Medical Expert" icon="stethoscope">
+    Choose this if you are a physician, surgeon, or other medical professional who wants to provide expert witness services. You will receive intake requests from attorneys, manage cases, create invoices, and receive payouts.
+  </Card>
+  <Card title="Attorney / Legal Professional" icon="briefcase">
+    Choose this if you are an attorney or legal professional who needs to find and engage medical expert witnesses. You will submit intake requests, manage cases, review and pay invoices, and collaborate with your team.
+  </Card>
+</CardGroup>
+
+<Warning>
+  Your role selection is permanent and cannot be changed after onboarding is complete. If you need to operate in both roles, you will need to create separate accounts with different email addresses.
+</Warning>
+
+## The onboarding modal
+
+After selecting your role, ExpertMD presents a guided onboarding modal called the **How It Works** flow. This modal walks you through three essential setup steps to ensure your account is ready to use.
+
+### Step 1: Understand the platform
+
+The first screen of the onboarding modal provides a brief overview of how ExpertMD works for your specific role:
+
+**For doctors:**
+- How attorneys find and contact you
+- How intake requests flow into your dashboard
+- How cases, invoicing, and payouts work
+
+**For attorneys:**
+- How to search for and contact medical experts
+- How intake requests and case management work
+- How invoicing and payment processing work
+
+### Step 2: Complete your profile
+
+The second step directs you to fill in your professional information. Depending on your role, this includes:
+
+**For doctors:**
+- Full legal name and credentials (MD, DO, PhD, etc.)
+- Medical specialty and sub-specialties
+- Years of experience
+- States where you are licensed to practice
+- Billing address for invoicing
+- Phone number
+
+**For attorneys:**
+- Full legal name and bar credentials
+- Practice area(s)
+- Law firm name and address
+- States where you are licensed to practice
+- Billing address
+- Phone number
+
+<Tip>
+  Complete as much of your profile as possible during onboarding. A complete profile helps build trust with the other party and is required before you can start receiving or submitting intake requests.
+</Tip>
+
+### Step 3: Set up encryption
+
+The third and final onboarding step asks you to create a passphrase for end-to-end encryption. This is covered in detail in the [Encryption Setup](/getting-started/encryption-setup) guide.
+
+## After onboarding
+
+Once you have completed all three steps, the onboarding modal closes and you are taken to your main dashboard. From here you can:
+
+<Steps>
+  <Step title="Explore your dashboard">
+    Familiarize yourself with the navigation sidebar, stats cards, and notification center. See the [Doctor Dashboard Overview](/doctors/dashboard-overview) or [Attorney Dashboard Overview](/attorneys/dashboard-overview) guides for a full tour.
+  </Step>
+  <Step title="Set up your intake form">
+    **Doctors:** Configure your intake form and vanity URL so attorneys can submit requests. See [Intake Form Setup](/doctors/intake-form-setup).
+
+    **Attorneys:** Set up your client intake form to receive case submissions from clients. See [Client Intake](/attorneys/client-intake).
+  </Step>
+  <Step title="Connect Stripe (Doctors only)">
+    If you are a doctor, set up Stripe Connect to enable invoicing and receive payouts. See [Stripe Connect Setup](/doctors/stripe-connect).
+  </Step>
+  <Step title="Invite team members">
+    If you work with a team, invite colleagues to collaborate on cases. See [Team Members](/doctors/team-members) or [Team Collaboration](/attorneys/team-collaboration).
+  </Step>
+</Steps>
+
+## Signing in to an existing account
+
+If you already have an ExpertMD account, click **Sign In** on the landing page and use the same method you used to create your account (email/password, Google, or Apple).
+
+### Multi-factor authentication
+
+ExpertMD supports multi-factor authentication (MFA) through Clerk. To enable MFA:
+
+1. Sign in to your account
+2. Navigate to **Settings** in the sidebar
+3. Under the **Security** section, click **Enable MFA**
+4. Follow the prompts to set up an authenticator app (Google Authenticator, Authy, etc.)
+
+<Info>
+  While MFA is optional, we strongly recommend enabling it to protect your account, especially since ExpertMD handles sensitive legal and medical data.
+</Info>
+
+## Troubleshooting
+
+### I did not receive a verification email
+- Check your spam or junk folder
+- Ensure you entered the correct email address
+- Click **Resend code** on the verification screen
+- If the issue persists, contact support at support@expertmd.io
+
+### I cannot sign in with Google
+- Make sure you are using the same Google account you used to sign up
+- Clear your browser cookies and try again
+- Try using an incognito/private browsing window
+
+### I selected the wrong role
+- Contact support at support@expertmd.io as soon as possible. Role changes require a manual account reset.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Complete Your Profile" icon="id-card" href="/getting-started/profile-completion">
+    Fill in your professional details and credentials
+  </Card>
+  <Card title="Set Up Encryption" icon="lock" href="/getting-started/encryption-setup">
+    Create your passphrase for end-to-end encryption
+  </Card>
+</CardGroup>

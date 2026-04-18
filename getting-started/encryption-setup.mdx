@@ -1,0 +1,179 @@
+---
+title: "Encryption Setup"
+description: "Set up end-to-end encryption with a passphrase to protect sensitive case data on ExpertMD."
+icon: "lock"
+---
+
+# Encryption Setup
+
+ExpertMD uses end-to-end encryption (E2EE) to protect sensitive case data. This means that your case notes, documents, and other confidential information are encrypted on your device before being sent to our servers. Only you and authorized parties with the correct passphrase can decrypt and view this data.
+
+<Info>
+  Encryption setup is the final step of onboarding and is required before you can start working with cases. Without a passphrase, you cannot access encrypted case data.
+</Info>
+
+## Why encryption matters
+
+Expert witness cases involve highly sensitive medical and legal information, including patient records, medical opinions, legal strategies, and privileged communications. ExpertMD encrypts this data so that:
+
+- **Server-side staff** cannot read your case data, even if they have database access
+- **Unauthorized users** cannot access your information, even in the unlikely event of a data breach
+- **Regulatory compliance** is maintained for HIPAA and attorney-client privilege requirements
+
+## How ExpertMD encryption works
+
+ExpertMD uses a multi-layer encryption architecture:
+
+<Steps>
+  <Step title="Passphrase creation">
+    You create a strong passphrase during onboarding. This passphrase is never sent to or stored on ExpertMD servers. It exists only on your device and in your memory.
+  </Step>
+  <Step title="Key derivation">
+    Your passphrase is used to derive an encryption key using PBKDF2 (Password-Based Key Derivation Function 2) with a unique salt. This derived key protects your private key.
+  </Step>
+  <Step title="Keypair generation">
+    ExpertMD generates an asymmetric keypair (public key and private key) for your account. Your public key is stored on the server so other users can encrypt data for you. Your private key is encrypted with your passphrase-derived key and stored on the server in encrypted form.
+  </Step>
+  <Step title="Per-case encryption">
+    Each case gets its own symmetric encryption key. This per-case key is used to encrypt and decrypt case data. The per-case key is then encrypted with each authorized user's public key, so every authorized party can decrypt it with their private key.
+  </Step>
+</Steps>
+
+## Creating your passphrase
+
+During the third step of onboarding (or from **Settings > Encryption** at any time), you will be prompted to create your passphrase.
+
+### Requirements
+
+Your passphrase must meet the following criteria:
+
+- Minimum of **12 characters**
+- At least one uppercase letter
+- At least one lowercase letter
+- At least one number
+- At least one special character
+
+<Tip>
+  Use a memorable phrase rather than a random string. For example: "MyExpert2024!Cases" is strong and easier to remember than "xK9#mP2$vL". Consider using a password manager to store your passphrase securely.
+</Tip>
+
+### Setting up your passphrase
+
+<Steps>
+  <Step title="Enter your passphrase">
+    Type your chosen passphrase into the passphrase field. A strength indicator shows how secure your passphrase is in real time.
+  </Step>
+  <Step title="Confirm your passphrase">
+    Re-enter your passphrase in the confirmation field. Both fields must match exactly.
+  </Step>
+  <Step title="Save your passphrase">
+    Click **Create Passphrase** to generate your encryption keys. This process takes a few seconds as the key derivation function runs.
+  </Step>
+  <Step title="Store your passphrase safely">
+    After creation, you will see a confirmation screen reminding you to store your passphrase in a safe location. ExpertMD cannot recover your passphrase if you lose it.
+  </Step>
+</Steps>
+
+<Warning>
+  **Your passphrase cannot be recovered.** ExpertMD does not store your passphrase and has no way to reset it. If you lose your passphrase, you will permanently lose access to all encrypted case data. Write it down and store it in a secure location, or use a password manager.
+</Warning>
+
+## Locking and unlocking
+
+Once your passphrase is set up, ExpertMD uses a lock/unlock mechanism to manage access to encrypted data during your session.
+
+### Unlocking your vault
+
+When you first navigate to a page that contains encrypted data (such as a case detail page), you will see a lock screen asking for your passphrase. Enter your passphrase to unlock and decrypt the data.
+
+Once unlocked, your passphrase-derived key is held in browser memory for the duration of your session. You will not need to re-enter your passphrase while you remain logged in.
+
+### Automatic locking
+
+Your encryption vault automatically locks when:
+
+- You **sign out** of ExpertMD
+- Your **browser session expires**
+- You **close the browser tab**
+- Your session is **idle for an extended period**
+
+### Manual locking
+
+You can manually lock your vault at any time by clicking the **Lock** icon in the top navigation bar. This immediately clears the passphrase-derived key from browser memory. You will need to re-enter your passphrase to access encrypted data again.
+
+<Tip>
+  Manually locking your vault is a good practice when stepping away from your computer, especially in shared office environments.
+</Tip>
+
+## What gets encrypted
+
+Not all data on ExpertMD is encrypted. Here is what is and is not protected by end-to-end encryption:
+
+### Encrypted (E2EE protected)
+
+- Case notes and internal memos
+- Uploaded documents and files
+- Sensitive medical information within cases
+- Communication notes between parties
+
+### Not encrypted (stored in plaintext)
+
+- Your profile information (name, email, specialty)
+- Case metadata (case name, status, dates)
+- Invoice amounts and line items
+- Intake request basic information
+- Dashboard statistics and charts
+
+<Info>
+  The distinction exists because some data needs to be searchable and displayable without decryption (e.g., case lists, invoice totals). Only the sensitive content within cases is encrypted.
+</Info>
+
+## Changing your passphrase
+
+You can change your passphrase at any time from **Settings > Encryption > Change Passphrase**.
+
+<Steps>
+  <Step title="Enter your current passphrase">
+    Verify your identity by entering your existing passphrase.
+  </Step>
+  <Step title="Enter your new passphrase">
+    Choose a new passphrase that meets the minimum requirements.
+  </Step>
+  <Step title="Confirm and save">
+    Confirm the new passphrase and click **Update Passphrase**. ExpertMD will re-encrypt your private key with the new passphrase. This does not re-encrypt case data -- the per-case keys remain the same, only the key that protects your private key changes.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+### I forgot my passphrase
+
+Unfortunately, ExpertMD cannot recover or reset your passphrase. If you have lost your passphrase:
+
+1. Contact support at support@expertmd.io
+2. A new keypair can be generated for your account, but **all previously encrypted data will be permanently inaccessible**
+3. New cases created after the reset will work normally with your new passphrase
+
+### Decryption is failing on a specific case
+
+- Ensure you are entering the correct passphrase
+- Try locking and unlocking your vault again
+- Clear your browser cache and try again
+- If the issue persists, it may indicate the case key was not properly shared with your account. Contact support.
+
+### The passphrase prompt keeps appearing
+
+- Make sure you are not in a private/incognito browsing mode that aggressively clears session data
+- Check that your browser is not blocking JavaScript storage APIs
+- Disable browser extensions that may interfere with session storage
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Security Overview" icon="shield" href="/security">
+    Learn more about ExpertMD's security architecture
+  </Card>
+  <Card title="Passphrase Management" icon="key" href="/security/passphrase-management">
+    Advanced passphrase management and best practices
+  </Card>
+</CardGroup>

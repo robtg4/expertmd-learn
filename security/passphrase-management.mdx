@@ -1,0 +1,89 @@
+---
+title: "Passphrase Management"
+description: "Best practices for creating, storing, changing, and recovering your ExpertMD encryption passphrase."
+icon: "key"
+---
+
+# Passphrase Management
+
+Your passphrase is the key to all your encrypted data on ExpertMD. This guide covers best practices for creating a strong passphrase, storing it safely, and what to do if you lose it.
+
+## Creating a strong passphrase
+
+A strong passphrase should be:
+
+- **Long** -- At least 12 characters, but 16+ is better
+- **Complex** -- Mix of uppercase, lowercase, numbers, and special characters
+- **Memorable** -- Something you can recall without writing it on a sticky note
+- **Unique** -- Not used for any other service or account
+
+### Good passphrase examples
+
+- `Expert2024!CaseReview` -- Combines a relevant word, year, symbol, and phrase
+- `My3rdFloor$Office!` -- Personal and memorable with complexity
+- `Sunrise#Mountain42!` -- Random but memorable word combination
+
+### Bad passphrase examples
+
+- `password123` -- Too common and simple
+- `expertmd` -- Based on the platform name, easily guessable
+- `12345678901234` -- No complexity, just numbers
+
+## Storing your passphrase
+
+<Info>
+  ExpertMD cannot recover your passphrase. If you lose it, all encrypted data is permanently inaccessible. Store your passphrase in at least one of the following secure locations.
+</Info>
+
+### Recommended storage methods
+
+| Method | Security Level | Convenience |
+|--------|---------------|-------------|
+| Password manager (1Password, Bitwarden, etc.) | High | High |
+| Written on paper in a locked safe | High | Low |
+| Encrypted note on your phone | Medium | High |
+
+<Warning>
+  Never store your passphrase in an unencrypted text file, email, or chat message. These can be compromised.
+</Warning>
+
+## Changing your passphrase
+
+You can change your passphrase at any time from **Settings > Encryption > Change Passphrase**:
+
+1. Enter your current passphrase
+2. Enter your new passphrase
+3. Confirm and save
+
+Changing your passphrase re-encrypts your private key with the new passphrase. Your case data is not re-encrypted -- only the key that protects your private key changes.
+
+## Lost passphrase
+
+If you lose your passphrase:
+
+1. **Your existing encrypted data is permanently inaccessible** -- There is no recovery mechanism
+2. Contact support at support@expertmd.io to reset your encryption keys
+3. A new keypair will be generated for your account
+4. New cases created after the reset will work with your new passphrase
+5. Previous encrypted case data cannot be recovered
+
+<Warning>
+  This is by design. Zero-knowledge encryption means that nobody -- not even ExpertMD -- can decrypt your data without your passphrase. This is the strongest possible protection for your sensitive data, but it comes with the responsibility of safeguarding your passphrase.
+</Warning>
+
+## Best practices
+
+<Steps>
+  <Step title="Use a password manager">
+    Store your passphrase in a reputable password manager. This is the most secure and convenient option.
+  </Step>
+  <Step title="Keep a physical backup">
+    Write your passphrase on paper and store it in a secure location (locked safe, safe deposit box).
+  </Step>
+  <Step title="Never share your passphrase">
+    ExpertMD staff will never ask for your passphrase. If someone asks for it, it is a phishing attempt.
+  </Step>
+  <Step title="Lock your vault when away">
+    Manually lock your encryption vault when stepping away from your computer, especially in shared environments.
+  </Step>
+</Steps>

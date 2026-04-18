@@ -1,0 +1,94 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "ExpertMD Learning Center",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#2D60FF",
+    "light": "#38bdf8",
+    "dark": "#1E40AF"
+  },
+  "font": {
+    "headings": { "family": "Inter" },
+    "body": { "family": "Inter" }
+  },
+  "topbarLinks": [
+    { "name": "What's New", "url": "/changelog" },
+    { "name": "Back to ExpertMD", "url": "https://expertmd.io" }
+  ],
+  "tabs": [
+    { "name": "For Doctors", "url": "/doctors" },
+    { "name": "For Attorneys", "url": "/attorneys" },
+    { "name": "Security", "url": "/security" },
+    { "name": "FAQ", "url": "/faq" }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/index",
+        "getting-started/account-setup",
+        "getting-started/profile-completion",
+        "getting-started/encryption-setup"
+      ]
+    },
+    {
+      "group": "For Doctors",
+      "pages": [
+        "doctors/index",
+        "doctors/dashboard-overview",
+        "doctors/intake-form-setup",
+        "doctors/pre-screening-requests",
+        "doctors/case-management",
+        "doctors/invoicing",
+        "doctors/billing-and-payouts",
+        "doctors/stripe-connect",
+        "doctors/team-members",
+        "doctors/referral-program"
+      ]
+    },
+    {
+      "group": "For Attorneys",
+      "pages": [
+        "attorneys/index",
+        "attorneys/dashboard-overview",
+        "attorneys/client-intake",
+        "attorneys/intake-requests",
+        "attorneys/case-management",
+        "attorneys/invoicing",
+        "attorneys/payment",
+        "attorneys/team-collaboration",
+        "attorneys/referral-program",
+        "attorneys/settings"
+      ]
+    },
+    {
+      "group": "Security",
+      "pages": [
+        "security/index",
+        "security/encryption-overview",
+        "security/passphrase-management"
+      ]
+    },
+    {
+      "group": "FAQ",
+      "pages": [
+        "faq/index",
+        "faq/billing-faq",
+        "faq/cases-faq"
+      ]
+    },
+    {
+      "group": "Changelog",
+      "pages": [
+        "changelog/index"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://expertmd.io"
+  }
+}
