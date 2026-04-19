@@ -145,7 +145,7 @@
       },
       {
         "tab": "FAQ",
-        "icon": "circle-help",
+        "icon": "circle-question",
         "groups": [
           {
             "group": "FAQ",
