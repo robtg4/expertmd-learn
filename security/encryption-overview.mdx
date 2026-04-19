@@ -17,6 +17,10 @@ The encryption system has four main components:
 3. **Asymmetric keypair** -- A public/private key pair for each user
 4. **Per-case symmetric keys** -- Unique encryption keys for each case
 
+<Frame caption="End-to-end encryption architecture — passphrase to per-case key flow">
+  <img src="/images/security/encryption-architecture.png" alt="End-to-end encryption architecture — passphrase to per-case key flow" />
+</Frame>
+
 ## How it all connects
 
 <Steps>
@@ -47,6 +51,10 @@ When multiple users need access to the same case (e.g., a doctor and an attorney
 - Each user can independently decrypt the case data with their own passphrase
 - Adding a new user to a case requires encrypting the per-case key with their public key
 - Removing a user requires re-keying the case (generating a new per-case key and re-encrypting all data)
+
+<Frame caption="How encryption keys are shared between team members">
+  <img src="/images/security/key-sharing-diagram.png" alt="How encryption keys are shared between team members" />
+</Frame>
 
 ## What is encrypted vs. plaintext
 

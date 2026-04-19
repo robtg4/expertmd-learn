@@ -44,6 +44,10 @@ You can create an invoice from two places:
   </Step>
 </Steps>
 
+<Frame caption="Create Invoice form with service selection">
+  <img src="/images/doctors/create-invoice-form.png" alt="Create Invoice form with service selection" />
+</Frame>
+
 <Warning>
   The total invoice amount must be greater than $0. ExpertMD does not allow zero-dollar or negative invoices. Each service line item must also have a rate greater than $0.
 </Warning>
@@ -58,6 +62,10 @@ Each line item appears separately on:
 - The downloadable PDF
 
 If tax is applied, it appears as its own line. A small rounding adjustment line item may appear if needed to ensure the Stripe total matches exactly.
+
+<Frame caption="Invoice line items with quantity, rate, and amount">
+  <img src="/images/doctors/invoice-line-items.png" alt="Invoice line items with quantity, rate, and amount" />
+</Frame>
 
 <Info>
   Itemized invoices provide transparency and help attorneys reconcile expenses with their case budgets. This is especially important for firms that need to track expert witness costs per service type.
@@ -75,6 +83,10 @@ Invoices move through the following statuses:
 | **Paid** | The attorney has completed payment. |
 | **Overdue** | The payment due date has passed without payment. |
 | **Void** | The invoice has been cancelled and is no longer payable. |
+
+<Frame caption="Invoice list showing different statuses">
+  <img src="/images/doctors/invoice-statuses.png" alt="Invoice list showing different statuses" />
+</Frame>
 
 ## Sending an invoice
 
@@ -103,6 +115,10 @@ Every invoice generates a PDF that both you and the attorney can download. The P
 - Itemized list of services with quantities, rates, and amounts
 - Subtotal, tax, and total
 - Payment status
+
+<Frame caption="Invoice PDF displayed inline in the browser">
+  <img src="/images/doctors/invoice-pdf-preview.png" alt="Invoice PDF displayed inline in the browser" />
+</Frame>
 
 ### PDF display behavior
 
