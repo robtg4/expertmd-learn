@@ -8,10 +8,19 @@
     "href": "https://expertmd.io"
   },
   "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
   "colors": {
     "primary": "#2D60FF",
     "light": "#38bdf8",
     "dark": "#1E40AF"
+  },
+  "background": {
+    "color": {
+      "light": "#FFFFFF"
+    }
   },
   "fonts": {
     "heading": {
