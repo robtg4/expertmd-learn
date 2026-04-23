@@ -4,11 +4,9 @@ description: "Learn how ExpertMD protects your sensitive legal and medical data 
 icon: "shield"
 ---
 
-# Security at ExpertMD
+ExpertMD is built with security as a foundational principle. Expert witness cases involve highly sensitive medical and legal information, and we take every measure to protect it.
 
-ExpertMD is built with security as a foundational principle. Expert witness cases involve highly sensitive medical and legal information, and we take every measure to protect it. This section covers our encryption architecture, passphrase management, and security best practices.
-
-## Security overview
+## Security Resources
 
 <CardGroup cols={2}>
   <Card title="End-to-End Encryption" icon="lock" href="/security/encryption-overview">
@@ -19,46 +17,38 @@ ExpertMD is built with security as a foundational principle. Expert witness case
   </Card>
 </CardGroup>
 
-## Infrastructure security
+## Key Principles
 
-ExpertMD runs on Amazon Web Services (AWS) with the following security measures:
+<CardGroup cols={3}>
+  <Card title="Zero-Knowledge" icon="eye-slash">
+    ExpertMD cannot read your encrypted case data. Your passphrase never leaves your device.
+  </Card>
+  <Card title="Defense in Depth" icon="layer-group">
+    Multiple layers — TLS in transit, encryption at rest, E2EE for sensitive data, role-based access controls.
+  </Card>
+  <Card title="Least Privilege" icon="user-lock">
+    Team members and collaborators access only the specific cases they are authorized for.
+  </Card>
+</CardGroup>
 
-- **AWS ECS** -- Containerized application deployment with isolated execution environments
-- **AWS RDS** -- PostgreSQL database with encryption at rest and automated backups
-- **AWS S3** -- Document storage with server-side encryption
-- **HTTPS everywhere** -- All traffic is encrypted in transit using TLS 1.2+
-- **Clerk authentication** -- Industry-standard authentication with MFA support
+## Infrastructure
+
+ExpertMD runs on Amazon Web Services (AWS):
+
+| Layer | Technology | Protection |
+|-------|-----------|------------|
+| **Compute** | AWS ECS | Containerized deployment with isolated execution environments |
+| **Database** | AWS RDS PostgreSQL | Encryption at rest, automated backups |
+| **Storage** | AWS S3 | Server-side encryption for all documents |
+| **Transit** | TLS 1.2+ | All traffic encrypted in transit |
+| **Auth** | Clerk | Industry-standard authentication with MFA support |
 
 ## Compliance
-
-ExpertMD is designed with the following compliance considerations:
 
 - **HIPAA considerations** -- Sensitive medical data is encrypted end-to-end
 - **Attorney-client privilege** -- Case data is encrypted and accessible only to authorized parties
 - **Data minimization** -- We collect and store only the data necessary for platform operation
 
-## Reporting security issues
+## Reporting Security Issues
 
-If you discover a security vulnerability, please report it responsibly:
-
-- Email: security@expertmd.io
-- Do not disclose the vulnerability publicly until we have addressed it
-- We appreciate and acknowledge responsible security researchers
-
-## Key principles
-
-<Steps>
-  <Step title="Zero-knowledge encryption">
-    ExpertMD cannot read your encrypted case data. Your passphrase never leaves your device, and we cannot recover it if lost.
-  </Step>
-  <Step title="Defense in depth">
-    Multiple layers of security protect your data: TLS in transit, encryption at rest, end-to-end encryption for sensitive data, and role-based access controls.
-  </Step>
-  <Step title="Least privilege">
-    Team members and collaborators can only access the specific cases they are authorized for. No user has access to data beyond what they need.
-  </Step>
-</Steps>
-
-<Frame caption="ExpertMD security architecture overview">
-  <img src="/images/security/encryption-overview-diagram.png" alt="ExpertMD security architecture overview" />
-</Frame>
+If you discover a security vulnerability, please report it responsibly to **security@expertmd.io**. We appreciate and acknowledge responsible security researchers.

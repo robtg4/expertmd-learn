@@ -9,27 +9,28 @@
   },
   "favicon": "/favicon.svg",
   "appearance": {
-    "default": "light",
-    "strict": true
+    "default": "dark"
   },
   "colors": {
-    "primary": "#2D60FF",
-    "light": "#38bdf8",
-    "dark": "#1E40AF"
-  },
-  "background": {
-    "color": {
-      "light": "#FFFFFF"
+    "primary": "#A78BFA",
+    "light": "#C4B5FD",
+    "dark": "#7C3AED",
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#1A1A1A"
     }
   },
   "fonts": {
     "heading": {
-      "family": "Inter"
+      "family": "Inter",
+      "weight": 600
     },
     "body": {
-      "family": "Inter"
+      "family": "Inter",
+      "weight": 400
     }
   },
+  "rounded": "lg",
   "navbar": {
     "links": [
       {
@@ -37,14 +38,19 @@
         "href": "/changelog"
       },
       {
-        "label": "Back to ExpertMD",
-        "href": "https://expertmd.io"
+        "label": "Blog",
+        "href": "https://expertmd.io/blog"
+      },
+      {
+        "label": "Login",
+        "href": "https://expertmd.io/sign-in"
       }
     ]
   },
   "footer": {
     "socials": {
-      "website": "https://expertmd.io"
+      "website": "https://expertmd.io",
+      "linkedin": "https://www.linkedin.com/company/expertmd"
     }
   },
   "navigation": {

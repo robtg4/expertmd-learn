@@ -6,8 +6,8 @@
   <text x="36" y="23" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="20" fill="#1A1F2A">ExpertMD</text>
   <defs>
     <linearGradient id="grad-light" x1="0" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2D60FF"/>
-      <stop offset="1" stop-color="#1E40AF"/>
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#5B21B6"/>
     </linearGradient>
   </defs>
 </svg>
